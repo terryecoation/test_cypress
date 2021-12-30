@@ -4,7 +4,10 @@
   "description": "Testing Cypress with github action",
   "main": "index.js",
   "scripts": {
-    "test": "cypress run"
+    "test": "cypress run",
+    "expect": "cypress-expect --passing 4",
+    "serve": "serve public",
+    "build": "echo 'building app... done!'"
   },
   "repository": {
     "type": "git",
