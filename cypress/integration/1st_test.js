@@ -4,6 +4,6 @@ describe('example to-do app', () => {
   })
 
   it.only('displays two todo items by default', () => {
-    cy.get("img[alt='Google']").should('be.visible')
+    
   })
 })
