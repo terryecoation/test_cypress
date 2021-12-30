@@ -1,2 +1,2 @@
-temp/
-cypress/videos/
+temp/*
+cypress/videos/*
