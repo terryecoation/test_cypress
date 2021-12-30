@@ -1,4 +1,4 @@
-describe('example to-do app', () => {
+describe('Terry Testing google.com', () => {
   beforeEach(() => {
     cy.visit('https://google.com')
   })
