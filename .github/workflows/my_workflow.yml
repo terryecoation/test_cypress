@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       
-      - name: Cache NPM and Cypress 📦
+      - name: Cache NPM and Cypress
         uses: actions/cache@v2
         with:
           path: |
