@@ -4,9 +4,7 @@
   "description": "Testing Cypress with github action",
   "main": "index.js",
   "scripts": {
-    
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "cy:run": "cypress run"
+    "test": "cypress run"
   },
   "repository": {
     "type": "git",
