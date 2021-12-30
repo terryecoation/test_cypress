@@ -4,6 +4,6 @@ describe('example to-do app', () => {
   })
 
   it.only('displays two todo items by default', () => {
-    cy.contains('Sign in').click
+    cy.contains('Sign in').should('be.visible')
   })
 })
