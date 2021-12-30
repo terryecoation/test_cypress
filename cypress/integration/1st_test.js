@@ -3,7 +3,7 @@ describe('example to-do app', () => {
     cy.visit('https://google.com')
   })
 
-  it.only('displays two todo items by default', () => {
-    cy.contains('Sign in').should('be.visible').click()
+  it.only('Terry Testing google.com', () => {
+    cy.contains('Sign in').should('not.be.visible').click()
   })
 })
