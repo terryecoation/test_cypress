@@ -9,12 +9,26 @@ jobs:
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
+
       - name: Install node
         uses: actions/setup-node@v2
         with:
            node-version: '14'
+
       - name: Install dependencies
         run: npm install
+      
+      - name: Cache NPM and Cypress 📦
+        uses: actions/cache@v2
+        with:
+          path: |
+            ~/.cache/Cypress
+            node_modules
+          key: my-cache-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
+      - name: Install Cypress
+        run: npm i cypress
+
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
