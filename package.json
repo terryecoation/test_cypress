@@ -1,0 +1,17 @@
+{
+  "name": "test_cypress",
+  "version": "1.0.0",
+  "description": "Testing Cypress with github action",
+  "main": "index.js",
+  "scripts": {
+    
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:run": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-ecoation:terryecoation/test_cypress.git"
+  },
+  "author": "Terry",
+  "license": "ISC"
+}
