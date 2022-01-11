@@ -3,7 +3,8 @@ name: Cypress SCheduled Run
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '0 */6 * * *'
+    # - cron:  '0 */6 * * *'
+    - cron: '*/5 * * * *'
 
 jobs:
  cypress-run:
@@ -47,3 +48,12 @@ jobs:
         with:
           name: cypress-videos
           path: cypress/videos
+
+      - name: Report Status
+        if: always()
+        uses: ravsamhq/notify-slack-action@master
+        with:
+          status: ${{ job.status }}
+          notify_when: 'failure'
+        env:
+          SLACK_WEBHOOK_URL: https://hooks.slack.com/workflows/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
