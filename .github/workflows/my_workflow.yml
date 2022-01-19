@@ -3,9 +3,10 @@ name: Cypress SCheduled Run
 # on:
 #   schedule:
 #     - cron: '*/5 * * * *'
-on: push
-  branches: 
-    - main
+on:
+  push:
+    branches:
+      - main
 
 jobs:
  cypress-run:
