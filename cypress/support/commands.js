@@ -23,3 +23,24 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('login', (user, password) => {
+    cy.get("input[placeholder='Email Address or Username']").type(user)
+    cy.get("input[placeholder='Password']").type(password)
+    cy.get("button[type='submit']").click()
+})
+
+Cypress.Commands.add('clearLoginForm', () => {
+    cy.get("input[placeholder='Email Address or Username']").clear()
+    cy.get("input[placeholder='Password']").clear()
+})
+
+Cypress.Commands.add('logout', () => {
+    cy.get('.userProfileNav').trigger('mouseover')
+    cy.contains('Logout').should('be.visible').click()
+})
+
+Cypress.Commands.add('goToConfigOption', (option) => {
+    cy.get('.userProfileNav').trigger('mouseover')
+    cy.contains(option).should('be.visible').click()
+})
