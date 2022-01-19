@@ -9,9 +9,14 @@ on:
       - main
 
 jobs:
+  env:
+    TEST_USER: ${{ secrets.TEST_USER }}
+    TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+    TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
  cypress-run:
     runs-on: ubuntu-latest
     name: Terry Testing Cypress GH Action
+
     steps: 
       - name: Checkout
         uses: actions/checkout@v2
@@ -37,11 +42,7 @@ jobs:
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
-        env:
-          TEST_USER: ${{ secrets.TEST_USER }}
-          TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
-          TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
-
+        
       - uses: actions/upload-artifact@v2
         if: failure()
         with:
