@@ -3,7 +3,8 @@ name: Cypress SCheduled Run
 # on:
 #   schedule:
 #     - cron: '*/5 * * * *'
-on: push 
+on: push
+  branch: main
 
 jobs:
  cypress-run:
@@ -56,4 +57,3 @@ jobs:
           notify_when: 'failure'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.ACTION_MONITORING_SLACK }}
-          
