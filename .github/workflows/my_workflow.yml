@@ -9,13 +9,13 @@ on:
       - main
 
 jobs:
-  env:
-    TEST_USER: ${{ secrets.TEST_USER }}
-    TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
-    TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
- cypress-run:
+  cypress-run:
     runs-on: ubuntu-latest
     name: Terry Testing Cypress GH Action
+    env:
+      TEST_USER: ${{ secrets.TEST_USER }}
+      TEST_USER_EMAIL: ${{ secrets.TEST_USER_EMAIL }}
+      TEST_USER_PASSWORD: ${{ secrets.TEST_USER_PASSWORD }}
 
     steps: 
       - name: Checkout
