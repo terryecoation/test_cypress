@@ -39,6 +39,10 @@ jobs:
 
       - name: Install Cypress
         run: npm i cypress
+        run: |
+              ECHO ${{ secrets.TEST_USER }}
+              ECHO ${{ secrets.TEST_USER_EMAIL }}
+              ECHO ${{ secrets.TEST_USER_PASSWORD }}
 
       - name: Cypress run
         uses: cypress-io/github-action@v2
